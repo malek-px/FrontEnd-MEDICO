@@ -5,6 +5,15 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+
+    //added colors
+    <color name="turquoise">#FF03DAC5</color>
+    <color name="citrus_yellow">#CCFF3C</color>
+    <color name="dark_turquoise">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="primary_color">#426778</color>
+    <color name="light_blue">#46ADCE</color>
+    <color name="light_gray">#E6EBF0</color>
+    <color name="medium_gray">#8F8E8E</color>
 </resources>
