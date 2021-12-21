@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MedicoMain">
         <activity
+            android:name=".AcceuilApp.RegistrationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AcceuilApp.LoginActivity"
+            android:exported="true" />
+        <activity
             android:name=".AcceuilApp.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/Theme.MedicoSplash">
