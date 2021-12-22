@@ -21,4 +21,58 @@
         <item name="android:textColor">#13497B</item>
     </style>
 
+    <style name="registration">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#042335</item>
+    </style>
+
+    <style name="username">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#042335</item>
+    </style>
+
+    <style name="birthday">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#042335</item>
+    </style>
+
+    <style name="address">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#042335</item>
+    </style>
+
+    <style name="phone">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#042335</item>
+    </style>
+
+    <style name="name">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="is_patient">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#042335</item>
+    </style>
+
+    <style name="assistant_name">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#042335</item>
+    </style>
+
+    <style name="assistant_phone">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#042335</item>
+    </style>
+
+    <style name="emergency_num">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#042335</item>
+    </style>
+
+    <style name="blood_type">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#042335</item>
+    </style>
 </resources>
