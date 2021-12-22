@@ -1,9 +1,12 @@
 package com.example.medico.AcceuilApp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import com.example.medico.EspaceAssistant.AssistantHome
+import com.example.medico.EspacePatient.PatientHome
 import com.example.medico.R
 
 class RegistrationActivity : AppCompatActivity() {
@@ -44,7 +47,7 @@ class RegistrationActivity : AppCompatActivity() {
         }
 
 
-        //switch visisble
+        //switch visible
         visible!!.setOnCheckedChangeListener { buttonView, isChecked ->
             visible_int = if (isChecked) {
                 blood_type.setVisibility(View.VISIBLE)
@@ -67,5 +70,15 @@ class RegistrationActivity : AppCompatActivity() {
 
 
     }
-    public fun Register(view: View){}
+    public fun Register(view: View){
+        if (visible_int == 0){
+            val intent = Intent(this@RegistrationActivity, AssistantHome::class.java)
+            startActivity(intent)
+        }
+        else{
+            val intent = Intent(this@RegistrationActivity, PatientHome::class.java)
+            startActivity(intent)
+        }
+
+    }
 }

@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MedicoMain">
         <activity
+            android:name=".EspacePatient.PatientHome"
+            android:exported="true" />
+        <activity
+            android:name=".EspaceAssistant.AssistantHome"
+            android:exported="true" />
+        <activity
             android:name=".AcceuilApp.RegistrationActivity"
             android:exported="true" />
         <activity
