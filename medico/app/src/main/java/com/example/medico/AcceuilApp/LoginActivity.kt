@@ -48,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
                 if(response.code()==200) {
                     val user = response.body()?.get("username").toString()
                     val username=user.substring(1,user.length-1)
-                    Log.e("Erooooorr",username)
+                    Log.e("Error",username)
                     Toast.makeText(this@LoginActivity, "Login Success", Toast.LENGTH_SHORT).show()
 
                     val intent = Intent(this@LoginActivity, PatientHome::class.java)
