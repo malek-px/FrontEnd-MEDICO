@@ -32,12 +32,16 @@ class LoginActivity : AppCompatActivity() {
 
     public fun Login(view: View){
 
+        //creation of retrofit object
         val apiInterface = MedicoAPI.create()
+        //map usage for the body
         val map: HashMap<String, String> = HashMap()
         map["username"] = email.toString()
         map["password"] = password.toString()
 
+        //consol log
         Log.e("user",map.toString())
+        //Post login api usage
         apiInterface.login(map).enqueue(object : Callback<user> {
             override fun onResponse(
                 call: Call<user>, response:

@@ -14,8 +14,8 @@ interface MedicoAPI {
     @POST("/api/login")
     fun login(@Body map : HashMap<String, String>): Call<user>
 
-    @POST("/register")
-    fun SignUp(@Body body: JsonObject): Call<JsonObject>
+    @POST("/api/register")
+    fun SignUp(@Body user: user): Call<user>
 
 
     companion object {

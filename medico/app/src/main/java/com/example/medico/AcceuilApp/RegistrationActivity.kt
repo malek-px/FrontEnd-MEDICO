@@ -3,13 +3,20 @@ package com.example.medico.AcceuilApp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
 import com.example.medico.EspaceAssistant.AssistantHome
 import com.example.medico.EspacePatient.PatientHome
 import com.example.medico.R
+import com.example.medico.Retrofit.MedicoAPI
+import com.example.medico.models.user
+import com.google.android.material.textfield.TextInputLayout
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-class RegistrationActivity : AppCompatActivity() {
+class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     lateinit var visible: Switch
 
@@ -35,7 +42,7 @@ class RegistrationActivity : AppCompatActivity() {
 
         //spinner configuration
         // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter.createFromResource(
+       ArrayAdapter.createFromResource(
             this,
             R.array.blood_types,
             android.R.layout.simple_spinner_item
@@ -71,14 +78,100 @@ class RegistrationActivity : AppCompatActivity() {
 
     }
     public fun Register(view: View){
+
+        val confirmpassword :String =findViewById<EditText>(R.id.confirm_password).toString()
+        //creation of retrofit object
+        val apiInterface = MedicoAPI.create()
+
+        val bloodTypeSpinner: Spinner = findViewById(R.id.blood_type_spinner)
+
+        //input reading
+        val name =findViewById<EditText>(R.id.username).text.toString()
+        val email =findViewById<EditText>(R.id.email).text.toString()
+        val password =findViewById<EditText>(R.id.password).text.toString()
+        val address =findViewById<EditText>(R.id.adresse).text.toString()
+        val phone =findViewById<EditText>(R.id.phone).text.toString()
+        val assistantPhone =findViewById<EditText>(R.id.assistant_phone).text.toString()
+        val emergencyNum =findViewById<EditText>(R.id.emergency_num).text.toString()
+        val bloodType=bloodTypeSpinner.getItemAtPosition(bloodTypeSpinner.selectedItemPosition).toString()
+
+        var valide :Boolean = ConfirmPassValidate()
+        Log.e("debut",valide.toString())
+
+        if(valide){
+Log.e("debut","confirmed")
+        //user infos holder
+
         if (visible_int == 0){
-            val intent = Intent(this@RegistrationActivity, AssistantHome::class.java)
-            startActivity(intent)
+            var userInfos = user(isAssistant = true,assistantName = "",name =name,email = email,password = password,address = address,phone = phone,assistantPhone = "",emergencyNum = "",bloodType = "")
+
+            apiInterface.SignUp(userInfos).enqueue(object : Callback<user> {
+                override fun onResponse(
+                    call: Call<user>, response:
+                    Response<user>
+                ) {
+                    Log.e("Assistant addded", userInfos.toString())
+
+                    val intent = Intent(this@RegistrationActivity, AssistantHome::class.java)
+                    startActivity(intent)
+
+                }
+
+                override fun onFailure(call: Call<user>, t: Throwable) {
+                    Log.e("Error", t.message.toString())
+                    Toast.makeText(this@RegistrationActivity, "User could not be added", Toast.LENGTH_SHORT).show()            }
+            })
+
         }
         else{
-            val intent = Intent(this@RegistrationActivity, PatientHome::class.java)
-            startActivity(intent)
+
+            var userInfos = user(isAssistant = false,assistantName = "",name =name,email = email,password = password,address = address,phone = phone,assistantPhone = assistantPhone,emergencyNum = emergencyNum,bloodType =bloodType)
+
+            apiInterface.SignUp(userInfos).enqueue(object : Callback<user> {
+                override fun onResponse(
+                    call: Call<user>, response:
+                    Response<user>
+                ) {
+                    Log.e("Patient addded", userInfos.toString())
+
+                    val intent = Intent(this@RegistrationActivity, PatientHome::class.java)
+                    startActivity(intent)
+
+                }
+
+                override fun onFailure(call: Call<user>, t: Throwable) {
+                    Log.e("Error", t.message.toString())
+                    Toast.makeText(this@RegistrationActivity, "User could not be added", Toast.LENGTH_SHORT).show()            }
+
+
+            })
+
+        }
+            Log.e("fin","confirmed")
         }
 
+    }
+
+    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onNothingSelected(p0: AdapterView<*>?) {
+        TODO("Not yet implemented")
+    }
+
+    private fun ConfirmPassValidate(): Boolean {
+        val confirmPasswordContainer = findViewById<TextInputLayout>(R.id.confirmPasswordContainer)
+        val confirmPasswordText = findViewById<EditText>(R.id.confirm_password).text.toString()
+        val passwordText = findViewById<EditText>(R.id.password).text.toString()
+        if (confirmPasswordText.isEmpty()) {
+            confirmPasswordContainer.helperText = "Required"
+            return false
+        }
+        else if (confirmPasswordText != passwordText) {
+            confirmPasswordContainer.helperText = "Passwords does not match"
+            return false
+        }
+        return true
     }
 }
