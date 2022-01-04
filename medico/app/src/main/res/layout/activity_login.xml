@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AcceuilApp.LoginActivity">
+    tools:context=".AcceuilApp.LoginActivity"
+    android:background="@drawable/back"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,7 +19,7 @@
             android:id="@+id/lineartop"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:background="@color/white"
+
             android:gravity="center"
             app:layout_constraintBottom_toTopOf="@id/email_txt"
             app:layout_constraintLeft_toLeftOf="parent"

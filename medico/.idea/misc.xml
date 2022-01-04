@@ -8,6 +8,12 @@
         <entry key="app/src/main/res/layout/activity_patient_home.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_registration.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/fragment_acceuil_patient.xml" value="0.1078125" />
+        <entry key="app/src/main/res/layout/fragment_health_patient.xml" value="0.1078125" />
+        <entry key="app/src/main/res/layout/fragment_health_view.xml" value="0.1453804347826087" />
+        <entry key="app/src/main/res/layout/fragment_medication_view.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_profil_patient.xml" value="0.1078125" />
+        <entry key="app/src/main/res/layout/single_item_meds_patient.xml" value="0.1453804347826087" />
       </map>
     </option>
   </component>
