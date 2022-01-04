@@ -36,8 +36,8 @@ class LoginActivity : AppCompatActivity() {
         val apiInterface = MedicoAPI.create()
         //map usage for the body
         val map: HashMap<String, String> = HashMap()
-        map["username"] = email.toString()
-        map["password"] = password.toString()
+        map["username"] = email.text.toString()
+        map["password"] = password.text.toString()
 
         //consol log
         Log.e("user",map.toString())
@@ -47,6 +47,7 @@ class LoginActivity : AppCompatActivity() {
                 call: Call<user>, response:
                 Response<user>
             ) {
+                if (response.code()==200){
                 Log.e("login Successful", map.toString())
                 val user = response.body()
                 Toast.makeText(this@LoginActivity, "Login Success", Toast.LENGTH_SHORT).show()
@@ -54,14 +55,16 @@ class LoginActivity : AppCompatActivity() {
                 val intent = Intent(this@LoginActivity, PatientHome::class.java)
                 startActivity(intent)
 
+            }else {
+                    Log.e("Error", "error")
+                    Toast.makeText(this@LoginActivity, "User not found", Toast.LENGTH_SHORT).show()
+            }
+
             }
 
             override fun onFailure(call: Call<user>, t: Throwable) {
-                Log.e("Error", t.message.toString())
-                Toast.makeText(this@LoginActivity, "User not found", Toast.LENGTH_SHORT).show()            }
 
-
-        })
+        }})
     }
 
     public fun showForgotPassword(view: View){}
