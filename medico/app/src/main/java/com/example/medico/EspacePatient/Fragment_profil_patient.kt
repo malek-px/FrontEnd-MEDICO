@@ -1,23 +1,17 @@
 package com.example.med11.AcceuilPatient
 
-import android.content.Intent
+
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
-import com.example.medico.AcceuilApp.email
-import com.example.medico.AcceuilApp.password
-import com.example.medico.EspacePatient.PatientHome
 import com.example.medico.R
 import com.example.medico.MainActivity.Companion.Guser
 import com.example.medico.Retrofit.MedicoAPI
 import com.example.medico.models.user
-import com.google.gson.JsonObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

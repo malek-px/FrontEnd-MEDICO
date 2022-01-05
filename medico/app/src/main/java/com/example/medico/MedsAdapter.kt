@@ -23,8 +23,6 @@ class MedsAdapter (val MedicationList: MutableList<Medication>): RecyclerView.Ad
         holder.medDesc.text = desc
         holder.medFreq.text = freq
 
-
-
     }
 
     override fun getItemCount()= MedicationList.size
