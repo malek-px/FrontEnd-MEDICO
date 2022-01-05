@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.medico.EspacePatient.PatientHome
+import com.example.medico.MainActivity.Companion.Guser
 import com.example.medico.R
 import com.example.medico.Retrofit.MedicoAPI
 import com.example.medico.models.user
@@ -50,6 +51,10 @@ class LoginActivity : AppCompatActivity() {
                 if (response.code()==200){
                 Log.e("login Successful", map.toString())
                 val user = response.body()
+                    Log.e("Connected user",user.toString())
+                    if (user != null) {
+                        Guser = user.copy()
+                    }
                 Toast.makeText(this@LoginActivity, "Login Success", Toast.LENGTH_SHORT).show()
 
                 val intent = Intent(this@LoginActivity, PatientHome::class.java)

@@ -6,6 +6,7 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 import java.util.HashMap
 
@@ -17,6 +18,8 @@ interface MedicoAPI {
     @POST("/api/register")
     fun SignUp(@Body user: user): Call<user>
 
+    @POST("/api/users/findAssistant")
+    fun assistantName(@Body map : HashMap<String, String>):Call<user>
 
     companion object {
 

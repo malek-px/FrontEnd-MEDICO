@@ -3,6 +3,7 @@ package com.example.medico.models
 data class user(
 
     var name: String,
+    var age :String,
     var email: String,
     var password: String,
     var phone: String,

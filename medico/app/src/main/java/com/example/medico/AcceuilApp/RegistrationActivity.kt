@@ -26,6 +26,7 @@ class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
     lateinit var emergency_num_txt : TextView
     lateinit var blood_type : Spinner
     lateinit var blood_type_txt : TextView
+    lateinit var age : TextView
 
     var visible_int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,6 +40,7 @@ class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
         emergency_num_txt=findViewById(R.id.emergency_num_txt)
         blood_type=findViewById(R.id.blood_type_spinner)
         blood_type_txt=findViewById(R.id.blood_type_txt)
+        age=findViewById(R.id.ageInput)
 
         //spinner configuration
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -87,6 +89,7 @@ class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
 
         //input reading
         val name =findViewById<EditText>(R.id.username).text.toString()
+        val age =findViewById<EditText>(R.id.ageInput).text.toString()
         val email =findViewById<EditText>(R.id.email).text.toString()
         val password =findViewById<EditText>(R.id.password).text.toString()
         val address =findViewById<EditText>(R.id.adresse).text.toString()
@@ -103,7 +106,7 @@ Log.e("debut","confirmed")
         //user infos holder
 
         if (visible_int == 0){
-            var userInfos = user(isAssistant = true,assistantName = "",name =name,email = email,password = password,address = address,phone = phone,assistantPhone = "",emergencyNum = "",bloodType = "")
+            var userInfos = user(age=age,isAssistant = true,assistantName = "",name =name,email = email,password = password,address = address,phone = phone,assistantPhone = "",emergencyNum = "",bloodType = "")
 
             apiInterface.SignUp(userInfos).enqueue(object : Callback<user> {
                 override fun onResponse(
@@ -125,7 +128,7 @@ Log.e("debut","confirmed")
         }
         else{
 
-            var userInfos = user(isAssistant = false,assistantName = "",name =name,email = email,password = password,address = address,phone = phone,assistantPhone = assistantPhone,emergencyNum = emergencyNum,bloodType =bloodType)
+            var userInfos = user(age=age,isAssistant = false,assistantName = "",name =name,email = email,password = password,address = address,phone = phone,assistantPhone = assistantPhone,emergencyNum = emergencyNum,bloodType =bloodType)
 
             apiInterface.SignUp(userInfos).enqueue(object : Callback<user> {
                 override fun onResponse(

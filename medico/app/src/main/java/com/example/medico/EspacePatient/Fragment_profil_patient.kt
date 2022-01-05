@@ -1,11 +1,27 @@
 package com.example.med11.AcceuilPatient
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import com.example.medico.AcceuilApp.email
+import com.example.medico.AcceuilApp.password
+import com.example.medico.EspacePatient.PatientHome
 import com.example.medico.R
+import com.example.medico.MainActivity.Companion.Guser
+import com.example.medico.Retrofit.MedicoAPI
+import com.example.medico.models.user
+import com.google.gson.JsonObject
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.util.HashMap
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,7 +38,18 @@ class Fragment_profil_patient : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private lateinit var patientname: TextView
+    private lateinit var patientage: TextView
+    private lateinit var patientAssistantName: String
+    private lateinit var patientAssistantNamefield: TextView
+    private lateinit var assistantNum: TextView
+    private lateinit var patientAddress: TextView
+    private lateinit var patientEmNum: TextView
+    private lateinit var patientBloodType: TextView
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        patientAssistantName = ""
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
@@ -34,8 +61,43 @@ class Fragment_profil_patient : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profil_patient, container, false)
+        val view = inflater.inflate(R.layout.fragment_profil_patient, container, false)
+
+        val apiInterface = MedicoAPI.create()
+        //map usage for the body
+        val map: HashMap<String, String> = HashMap()
+        map["assistantPhone"] = Guser.assistantPhone
+        Log.e("name assistant",map.toString())
+        apiInterface.assistantName(map).enqueue(object : Callback<user> {
+
+            override fun onResponse(call: Call<user>, response: Response<user>) {
+                val userAssistant = response.body()
+                if (userAssistant != null) {
+                    Log.e("userAssistant", userAssistant.name)
+                    patientAssistantName=userAssistant.name
+                    patientAssistantNamefield = view.findViewById(R.id.textView6)
+                    patientAssistantNamefield.setText(patientAssistantName)
+                }
+                Log.e("asssitant name",userAssistant.toString())
+            }
+            override fun onFailure(call: Call<user>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+        })
+
+        patientname = view.findViewById(R.id.PNAME)
+        patientname.setText(Guser.name)
+        patientage = view.findViewById(R.id.textView4)
+        patientage.setText(Guser.age)
+
+        patientAddress = view.findViewById(R.id.ADDRESS)
+        patientAddress.setText(Guser.address)
+        patientEmNum = view.findViewById(R.id.textView12)
+        patientEmNum.setText(Guser.emergencyNum)
+        patientBloodType = view.findViewById(R.id.textView14)
+        patientBloodType.setText(Guser.bloodType)
+
+        return view
     }
 
     companion object {
