@@ -115,7 +115,7 @@ Log.e("debut","confirmed")
                 ) {
                     Log.e("Assistant addded", userInfos.toString())
 
-                    val intent = Intent(this@RegistrationActivity, AssistantHome::class.java)
+                    val intent = Intent(this@RegistrationActivity, LoginActivity::class.java)
                     startActivity(intent)
 
                 }
@@ -137,7 +137,7 @@ Log.e("debut","confirmed")
                 ) {
                     Log.e("Patient addded", userInfos.toString())
 
-                    val intent = Intent(this@RegistrationActivity, PatientHome::class.java)
+                    val intent = Intent(this@RegistrationActivity, LoginActivity::class.java)
                     startActivity(intent)
 
                 }

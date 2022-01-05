@@ -75,7 +75,7 @@ class Fragment_profil_patient : Fragment() {
                 Log.e("asssitant name",userAssistant.toString())
             }
             override fun onFailure(call: Call<user>, t: Throwable) {
-                TODO("Not yet implemented")
+                Log.e("asssitant name","failed to get assistant name")
             }
         })
 

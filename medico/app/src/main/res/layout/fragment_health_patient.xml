@@ -2,14 +2,11 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/group_177"
     android:layout_height="match_parent"
     tools:context=".AcceuilPatient.Fragment_health_patient">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="40dp"
-        android:text="Health" />
+
 
 </FrameLayout>

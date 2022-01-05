@@ -1,7 +1,7 @@
 package com.example.medico.models
 
 data class user(
-    var _id:String,
+
     var name: String,
     var age :String,
     var email: String,
