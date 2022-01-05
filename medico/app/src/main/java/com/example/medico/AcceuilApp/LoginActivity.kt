@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.medico.EspaceAssistant.AssistantHome
 import com.example.medico.EspacePatient.PatientHome
 import com.example.medico.MainActivity.Companion.Guser
 import com.example.medico.R
@@ -57,8 +58,13 @@ class LoginActivity : AppCompatActivity() {
                     }
                 Toast.makeText(this@LoginActivity, "Login Success", Toast.LENGTH_SHORT).show()
 
-                val intent = Intent(this@LoginActivity, PatientHome::class.java)
-                startActivity(intent)
+                    if (Guser.isAssistant){
+                val intent = Intent(this@LoginActivity, AssistantHome::class.java)
+                startActivity(intent)}
+                    else{
+                        val intent = Intent(this@LoginActivity, PatientHome::class.java)
+                        startActivity(intent)
+                }
 
             }else {
                     Log.e("Error", "error")
