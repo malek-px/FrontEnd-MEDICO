@@ -9,12 +9,11 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 class MyAdapterAssistantView(fragmentManager: FragmentManager, lifecycle: Lifecycle):
     FragmentStateAdapter(fragmentManager,lifecycle) {
     override fun getItemCount(): Int {
-        return 2    }
+        return 1    }
 
     override fun createFragment(position: Int): Fragment {
         when(position){
-            0->return Health_view()
-            1->return Medication_view()
-            else->return Health_view()
+            0->return Medication_view()
+            else->return Medication_view()
         }    }
 }

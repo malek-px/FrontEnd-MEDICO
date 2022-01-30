@@ -10,7 +10,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class AssistantHome : AppCompatActivity() {
     //tabs
-    var tabTitle = arrayOf("Health","Medication")
+    var tabTitle = arrayOf("Medication")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

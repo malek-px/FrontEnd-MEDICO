@@ -43,11 +43,11 @@ class Medication_view : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view=inflater.inflate(R.layout.fragment_medication_view, container, false)
+       // val view=inflater.inflate(R.layout.fragment_medication_view, container, false)
         // Inflate the layout for this fragment
 
         //declaration des elements
-        recylcerMedication =view.findViewById(R.id.assistant_view_recyclerView_meds)
+       // recylcerMedication =view.findViewById(R.id.assistant_view_recyclerView_meds)
 
         var MedsList : MutableList<Medication> = ArrayList()
 
