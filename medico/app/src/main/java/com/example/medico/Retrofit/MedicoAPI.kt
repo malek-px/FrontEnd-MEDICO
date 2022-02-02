@@ -23,7 +23,7 @@ interface MedicoAPI {
 
     companion object {
 
-        var BASE_URL = "http://10.0.2.2:3000/"
+        var BASE_URL = "https://medico-for-health.herokuapp.com/"
 
         fun create() : MedicoAPI {
 

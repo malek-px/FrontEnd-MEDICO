@@ -49,29 +49,29 @@ class LoginActivity : AppCompatActivity() {
                 call: Call<user>, response:
                 Response<user>
             ) {
-                if (response.code()==200){
-                Log.e("login Successful", map.toString())
-                val user = response.body()
-                    Log.e("Connected user",user.toString())
-                    if (user != null) {
-                        Guser = user.copy()
-                    }
-                Toast.makeText(this@LoginActivity, "Login Success", Toast.LENGTH_SHORT).show()
-
-                    if (Guser.isAssistant){
+//                if (response.code()==200){
+//                Log.e("login Successful", map.toString())
+//                val user = response.body()
+//                    Log.e("Connected user",user.toString())
+//                    if (user != null) {
+//                        Guser = user.copy()
+//                    }
+//                Toast.makeText(this@LoginActivity, "Login Success", Toast.LENGTH_SHORT).show()
+//
+//                    if (Guser.isAssistant){
                 val intent = Intent(this@LoginActivity, AssistantHome::class.java)
                 startActivity(intent)}
-                    else{
-                        val intent = Intent(this@LoginActivity, PatientHome::class.java)
-                        startActivity(intent)
-                }
+//                    else{
+//                        val intent = Intent(this@LoginActivity, PatientHome::class.java)
+//                        startActivity(intent)
+//                }
+//
+//            }else {
+//                    Log.e("Error", "error")
+//                    Toast.makeText(this@LoginActivity, "User not found", Toast.LENGTH_SHORT).show()
+//            }
 
-            }else {
-                    Log.e("Error", "error")
-                    Toast.makeText(this@LoginActivity, "User not found", Toast.LENGTH_SHORT).show()
-            }
-
-            }
+         //   }
 
             override fun onFailure(call: Call<user>, t: Throwable) {
 

@@ -28,8 +28,8 @@ class Medication_view : Fragment() {
     private var param2: String? = null
 
     //initialisation des variables
-    lateinit var recylcerMedication: RecyclerView
-    lateinit var recylcerMedicationAdapter: MedsAdapter
+//    lateinit var recylcerMedication: RecyclerView
+  //  lateinit var recylcerMedicationAdapter: MedsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,11 +60,11 @@ class Medication_view : Fragment() {
         MedsList.add(Medication(medPic = R.drawable.pills_bottle_1, medName = "Medicine 7", medDesc = "Blood pressure",medFreq = "1 pill/day" ))
         MedsList.add(Medication(medPic = R.drawable.tablet_1, medName = "Medicine 8", medDesc = "Blood pressure",medFreq = "3 pill/day" ))
 
-        recylcerMedicationAdapter = MedsAdapter(MedsList)
-
-        recylcerMedication.adapter = recylcerMedicationAdapter
-
-        recylcerMedication.layoutManager = LinearLayoutManager(container?.context, LinearLayoutManager.VERTICAL ,false)
+//        recylcerMedicationAdapter = MedsAdapter(MedsList)
+//
+//        recylcerMedication.adapter = recylcerMedicationAdapter
+//
+//        recylcerMedication.layoutManager = LinearLayoutManager(container?.context, LinearLayoutManager.VERTICAL ,false)
 
         return view
     }
