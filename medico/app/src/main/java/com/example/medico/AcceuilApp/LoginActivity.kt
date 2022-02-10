@@ -11,6 +11,7 @@ import android.widget.Toast
 import com.example.medico.EspaceAssistant.AssistantHome
 import com.example.medico.EspacePatient.PatientHome
 import com.example.medico.MainActivity.Companion.Guser
+import com.example.medico.MainActivity2
 import com.example.medico.R
 import com.example.medico.Retrofit.MedicoAPI
 import com.example.medico.models.user
@@ -59,7 +60,7 @@ class LoginActivity : AppCompatActivity() {
 //                Toast.makeText(this@LoginActivity, "Login Success", Toast.LENGTH_SHORT).show()
 //
 //                    if (Guser.isAssistant){
-                val intent = Intent(this@LoginActivity, AssistantHome::class.java)
+                val intent = Intent(this@LoginActivity, MainActivity2::class.java)
                 startActivity(intent)}
 //                    else{
 //                        val intent = Intent(this@LoginActivity, PatientHome::class.java)

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2"
+    android:background="@drawable/group_178"
+    >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="320dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="56dp"
+        android:text="If your body is not right. The rest of your day will go wrong \nTAKE CARE OF YOURSELF."
+        android:textAlignment="center"
+        android:textColor="@color/dark_turquoise"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="327dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="132dp"
+        android:text="Thousands have lived without love, not one without water."
+        android:textAlignment="center"
+        android:textColor="@color/dark_turquoise"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="313dp"
+        android:layout_height="89dp"
+        android:layout_marginBottom="364dp"
+        android:text="Being active everyday makes it easier to hear that inner voice."
+        android:textAlignment="center"
+        android:textColor="@color/dark_turquoise"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="144dp"
+        android:layout_height="26dp"
+        android:layout_marginEnd="44dp"
+        android:text="V. L. Allineare"
+        android:textAlignment="textEnd"
+        android:textColor="@color/primary_color"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.243" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="144dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="220dp"
+        android:text="Haruki Murakami"
+        android:textAlignment="textEnd"
+        android:textColor="@color/primary_color"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.55" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="144dp"
+        android:layout_height="26dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="88dp"
+        android:text="W. H. Auden"
+        android:textAlignment="textEnd"
+        android:textColor="@color/primary_color"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonlast"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/ic_baseline_login_24"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
